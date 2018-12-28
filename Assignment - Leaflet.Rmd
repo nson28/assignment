@@ -1,0 +1,23 @@
+---
+title: "Assignment - Leaflet"
+author: "Nelson H. Tejara"
+date: "28 December 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Assignment - Mapping with Leaflet
+
+ 
+```{r}
+library(leaflet)
+rand_lng = function(n = 30) rnorm(n, 12.87, .01)
+rand_lat = function(n = 30) rnorm(n, 42.0285, .01)
+m = leaflet() %>% addTiles() %>% addCircles(rand_lng(70), rand_lat(70), radius = runif(40, 10, 100))
+m
+```
+
+ 
